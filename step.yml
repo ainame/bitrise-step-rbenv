@@ -61,7 +61,7 @@ toolkit:
     entry_file: step.sh
 
 inputs:
-  - ruby_version:
+  - ruby_version: ""
     opts:
       title: "Ruby version to install"
       summary: "A valid Ruby version to be installed via rbenv. Leave this empty to use `.ruby-version` file."
@@ -69,5 +69,4 @@ inputs:
         A valid ruby version to be installed via rbenv. You can leave this empty to make this step read `.ruby-version` file.
         If the current stack environment has installed specifed version, this step installs nothing.
       is_expand: true
-      is_required: true
-      value_options: []
+      is_required: false

@@ -10,9 +10,9 @@
 title: |-
   rbenv
 summary: |
-  Install a Ruby version you specify
+  Install a Ruby version you specify via rbenv
 description: |
-  Install a Ruby version you speficy via .ruby-version or step configruation
+  Install a Ruby version you speficy with .ruby-version or step configruation via rbenv
 website: https://github.com/ainame/bitrise-step-rbenv
 source_code_url: https://github.com/ainame/bitrise-step-rbenv
 support_url: https://github.com/ainame/bitrise-step-rbenv/issues
@@ -51,37 +51,23 @@ run_if: ""
 
 deps:
   brew:
-  - name: git
-  - name: wget
+  - name: rbenv
+  - name: ruby-build
   apt_get:
-  - name: git
-  - name: wget
-
+  - name: rbenv
 
 toolkit:
   bash:
     entry_file: step.sh
 
-
 inputs:
-  - example_step_input: Default Value - you can leave this empty if you want to
+  - ruby_version:
     opts:
-      title: "Example Step Input"
-      summary: Summary. No more than 2-3 sentences.
+      title: "Ruby version to install"
+      summary: "A valid Ruby version to be installed via rbenv. Leave this empty to use `.ruby-version` file."
       description: |
-        Description of this input.
-
-        Can be Markdown formatted text.
+        A valid ruby version to be installed via rbenv. You can leave this empty to make this step read `.ruby-version` file.
+        If the current stack environment has installed specifed version, this step installs nothing.
       is_expand: true
       is_required: true
       value_options: []
-
-outputs:
-  - EXAMPLE_STEP_OUTPUT:
-    opts:
-      title: "Example Step Output"
-      summary: Summary. No more than 2-3 sentences.
-      description: |
-        Description of this output.
-
-        Can be Markdown formatted text.

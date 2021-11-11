@@ -11,7 +11,7 @@ function setup_rbenv {
             # https://github.com/rbenv/rbenv-installer
             curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
             PATH=~/.rbenv/bin:$PATH
-            eval $(rbenv init -)
+            eval "$(rbenv init -)"
             ;;
         *)
             echo "ERROR: Unknown platform found ${platform}"

@@ -6,10 +6,10 @@ This also collects automatically the installed directory path to cache.
 ## How to use this step
 
 If you want to use this step in your project's `bitrise.yml`,
-reference it in your `bitrise.yml` with the `git::PUBLIC-GIT-CLONE-URL@BRANCH` step reference style:
+reference it in your `bitrise.yml` with the `git::PUBLIC-GIT-CLONE-URL@TAG` step reference style:
 
 ```
-- git::https://github.com/ainame/bitrise-step-rbenv.git@branch: {}
+- git::https://github.com/ainame/bitrise-step-rbenv.git@0.0.1: {}
 ```
 
 You can find more examples of step reference styles

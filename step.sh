@@ -10,7 +10,7 @@ function setup_rbenv {
         Linux*)
             # https://github.com/rbenv/rbenv-installer
             curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
-            PATH=${rbenv_root}/bin:$PATH
+            PATH=~/.rbenv/bin:$PATH
             eval $(rbenv init -)
             ;;
         *)

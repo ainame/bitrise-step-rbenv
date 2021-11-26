@@ -5,6 +5,7 @@ function setup_rbenv {
     platform="$(uname -s)"
     case "${platform}" in
         Darwin*) # macOS
+            brew update
             brew outdated ruby-build || brew upgrade ruby-build
             ;;
         Linux*)

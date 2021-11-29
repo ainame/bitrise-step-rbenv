@@ -3,14 +3,18 @@ changelog:
     labels:
       - ignore-for-release
   categories:
-    - title: Breaking Changes 🛠
+    - title: Breaking Changes 🚨
       labels:
         - Semver-Major
         - breaking-change
-    - title: Exciting New Features 🎉
+    - title: New Features 🎉
       labels:
         - Semver-Minor
         - enhancement
+    - title: Bug fixes 🛠
+      labels:
+        - Semver-Patch
+        - bugfix
     - title: Other Changes
       labels:
         - "*"

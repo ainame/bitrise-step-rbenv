@@ -14,7 +14,7 @@ function setup_rbenv {
             PATH=~/.rbenv/bin:$PATH
             eval "$(rbenv init -)"
             # Store rbenv init settings for other steps
-            rbenv init 2> ~/.bashrc
+            ~/.rbenv/bin/rbenv init 2> ~/.bashrc
             ;;
         *)
             echo "ERROR: Unknown platform found ${platform}"

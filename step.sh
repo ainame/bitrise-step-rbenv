@@ -15,8 +15,10 @@ function setup_rbenv {
             eval "$(rbenv init -)"
 
             wget -q "https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-doctor" -O- | bash
+
             # Store rbenv init settings for other steps
-            ~/.rbenv/bin/rbenv init 2> ~/.bashrc
+            ~/.rbenv/bin/rbenv init bash 2> ~/.bashrc || echo "Set up ~/.bashrc for rbenv"
+            ~/.rbenv/bin/rbenv init zsh 2> ~/.zshrc || echo "Set up ~/.zshrc for rbenv"
             ;;
         *)
             echo "ERROR: Unknown platform found ${platform}"

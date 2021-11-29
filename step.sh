@@ -13,6 +13,8 @@ function setup_rbenv {
             curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
             PATH=~/.rbenv/bin:$PATH
             eval "$(rbenv init -)"
+
+            wget -q "https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-doctor" -O- | bash
             # Store rbenv init settings for other steps
             ~/.rbenv/bin/rbenv init 2> ~/.bashrc
             ;;

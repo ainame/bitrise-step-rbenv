@@ -10,11 +10,11 @@ function setup_rbenv {
             ;;
         Linux*)
             # https://github.com/rbenv/rbenv-installer
-            curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
+            curl -fsSL https://raw.githubusercontent.com/rbenv/rbenv-installer/main/bin/rbenv-installer | bash
             PATH="/root/.rbenv/bin:${PATH}"
             eval "$(rbenv init -)"
 
-            wget -q "https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-doctor" -O- | bash
+            wget -q "https://raw.githubusercontent.com/rbenv/rbenv-installer/main/bin/rbenv-doctor" -O- | bash
 
             envman add --key PATH --value "${PATH}"
             ;;
@@ -22,7 +22,7 @@ function setup_rbenv {
             echo "ERROR: Unknown platform found ${platform}"
             ;;
     esac
-    curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-doctor | bash
+    curl -fsSL https://raw.githubusercontent.com/rbenv/rbenv-installer/main/bin/rbenv-doctor | bash
 }
 
 setup_rbenv
